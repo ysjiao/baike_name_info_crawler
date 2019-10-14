@@ -42,12 +42,12 @@ def read_namelist(path) -> list:
 
 
 if __name__ == "__main__":
-	name_list = read_namelist('hk_name.txt')
+	name_list = read_namelist('xxx.txt')
 	fout = open('output.html', 'w', encoding = 'utf-8')
 	unsuccess_file = open('unsuccess_name.txt', 'w', encoding='utf-8')
 	for name in name_list:
 		# name = '诸葛'
-		root_url = f"https://baike.baidu.com/item/{name}"
+		root_url = f"ip/{name}"
 		obj_spider = SpiderMain()
 		success = obj_spider.craw(root_url, fout)
 		if not success:
